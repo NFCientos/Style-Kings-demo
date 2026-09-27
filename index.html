@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Style Kings | Barbería en Iquique</title>
+
+    <meta name="description"
+        content="Style Kings Barbería en Iquique. Cortes modernos y clásicos, barba y coloración de barba.">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background:
+                radial-gradient(circle at top, #252525 0%, #111 45%, #080808 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            padding: 25px 15px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+            margin: auto;
+        }
+
+        /* ENCABEZADO */
+
+        .header {
+            text-align: center;
+            padding: 20px 10px 25px;
+        }
+
+        .logo {
+            width: 105px;
+            height: 105px;
+            margin: 0 auto 18px;
+
+            border: 2px solid #c9a227;
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #111;
+
+            box-shadow:
+                0 0 0 5px rgba(201, 162, 39, 0.08),
+                0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .logo span {
+            color: #c9a227;
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        h1 {
+            font-size: 34px;
+            letter-spacing: 4px;
+            margin-bottom: 7px;
+        }
+
+        .subtitle {
+            color: #c9a227;
+            font-size: 15px;
+            letter-spacing: 1px;
+        }
+
+        .intro {
+            text-align: center;
+            color: #bdbdbd;
+            font-size: 14px;
+            margin-top: 12px;
+        }
+
+        /* BOTONES PRINCIPALES */
+
+        .main-buttons {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin: 10px 0 25px;
+        }
+
+        .main-button {
+            text-decoration: none;
+            color: white;
+            background: #181818;
+            border: 1px solid #333;
+            border-radius: 14px;
+            padding: 16px 6px;
+            text-align: center;
+
+            transition: 0.2s;
+        }
+
+        .main-button:hover {
+            transform: translateY(-2px);
+            border-color: #c9a227;
+        }
+
+        .main-button .icon {
+            display: block;
+            font-size: 24px;
+            margin-bottom: 7px;
+        }
+
+        .main-button span:last-child {
+            font-size: 12px;
+        }
+
+        /* SECCIONES */
+
+        .section {
+            background: rgba(20,20,20,0.94);
+            border: 1px solid #292929;
+            border-radius: 18px;
+            padding: 20px;
+            margin-bottom: 16px;
+
+            box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+        }
+
+        .section-title {
+            color: #c9a227;
+            font-size: 17px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        /* SERVICIOS */
+
+        .service {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+
+            padding: 13px 5px;
+            border-bottom: 1px solid #292929;
+        }
+
+        .service:last-child {
+            border-bottom: none;
+        }
+
+        .service-icon {
+            font-size: 23px;
+            width: 35px;
+            text-align: center;
+        }
+
+        .service-name {
+            font-size: 15px;
+            color: #eeeeee;
+        }
+
+        /* INFORMACIÓN */
+
+        .info-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 9px 0;
+            color: #dddddd;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .info-icon {
+            width: 25px;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .info-row strong {
+            color: white;
+        }
+
+        /* HORARIOS */
+
+        .hours {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #292929;
+            font-size: 14px;
+        }
+
+        .hours:last-child {
+            border-bottom: none;
+        }
+
+        .day {
+            color: #ddd;
+        }
+
+        .time {
+            color: #c9a227;
+            font-weight: bold;
+        }
+
+        /* BOTÓN WHATSAPP */
+
+        .whatsapp-large {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+
+            background: #c9a227;
+            color: #080808;
+
+            font-weight: bold;
+            font-size: 15px;
+
+            padding: 15px;
+            border-radius: 12px;
+
+            margin-top: 15px;
+
+            transition: 0.2s;
+        }
+
+        .whatsapp-large:hover {
+            transform: scale(1.02);
+        }
+
+        /* PIE */
+
+        footer {
+            text-align: center;
+            color: #666;
+            font-size: 11px;
+            padding: 15px 0 5px;
+            line-height: 1.6;
+        }
+
+        .gold {
+            color: #c9a227;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 360px) {
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .main-buttons {
+                gap: 6px;
+            }
+
+            .main-button {
+                padding: 13px 4px;
+            }
+
+            .main-button .icon {
+                font-size: 21px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- ENCABEZADO -->
+
+    <header class="header">
+
+        <div class="logo">
+            <span>SK</span>
+        </div>
+
+        <h1>STYLE KINGS</h1>
+
+        <div class="subtitle">
+            BARBERÍA · IQUIQUE
+        </div>
+
+        <p class="intro">
+            Estilo, precisión y personalidad.
+        </p>
+
+    </header>
+
+
+    <!-- BOTONES PRINCIPALES -->
+
+    <div class="main-buttons">
+
+        <!-- LLAMAR -->
+        <a class="main-button" href="tel:+56982624965">
+            <span class="icon">📞</span>
+            <span>Llamar</span>
+        </a>
+
+        <!-- WHATSAPP -->
+        <a class="main-button"
+           href="https://wa.me/56982624965"
+           target="_blank">
+            <span class="icon">💬</span>
+            <span>WhatsApp</span>
+        </a>
+
+        <!-- GOOGLE MAPS -->
+        <a class="main-button"
+           href="https://www.google.com/maps/search/?api=1&query=Barros+Arana+773+Iquique+Chile"
+           target="_blank">
+            <span class="icon">📍</span>
+            <span>Cómo llegar</span>
+        </a>
+
+    </div>
+
+
+    <!-- SERVICIOS -->
+
+    <section class="section">
+
+        <h2 class="section-title">
+            Nuestros servicios
+        </h2>
+
+        <div class="service">
+            <div class="service-icon">✂️</div>
+            <div class="service-name">
+                Corte de cabello moderno
+            </div>
+        </div>
+
+        <div class="service">
+            <div class="service-icon">✂️</div>
+            <div class="service-name">
+                Corte de cabello clásico
+            </div>
+        </div>
+
+        <div class="service">
+            <div class="service-icon">🪒</div>
+            <div class="service-name">
+                Corte de barba
+            </div>
+        </div>
+
+        <div class="service">
+            <div class="service-icon">🎨</div>
+            <div class="service-name">
+                Coloración de barba
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- INFORMACIÓN -->
+
+    <section class="section">
+
+        <h2 class="section-title">
+            Información
+        </h2>
+
+        <div class="info-row">
+
+            <div class="info-icon">📍</div>
+
+            <div>
+                <strong>Dirección</strong><br>
+                Barros Arana 773, Iquique
+            </div>
+
+        </div>
+
+        <div class="info-row">
+
+            <div class="info-icon">📞</div>
+
+            <div>
+                <strong>Teléfono</strong><br>
+                +56 9 8262 4965
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- HORARIOS -->
+
+    <section class="section">
+
+        <h2 class="section-title">
+            Horarios
+        </h2>
+
+        <div class="hours">
+            <span class="day">Lunes</span>
+            <span class="time">11:00 – 21:00</span>
+        </div>
+
+        <div class="hours">
+            <span class="day">Martes</span>
+            <span class="time">11:00 – 21:00</span>
+        </div>
+
+        <div class="hours">
+            <span class="day">Miércoles</span>
+            <span class="time">11:00 – 21:00</span>
+        </div>
+
+        <div class="hours">
+            <span class="day">Jueves</span>
+            <span class="time">11:00 – 21:00</span>
+        </div>
+
+        <div class="hours">
+            <span class="day">Viernes</span>
+            <span class="time">11:00 – 21:00</span>
+        </div>
+
+        <div class="hours">
+            <span class="day">Sábado</span>
+            <span class="time">11:00 – 21:00</span>
+        </div>
+
+        <div class="hours">
+            <span class="day">Domingo</span>
+            <span class="time">11:00 – 20:00</span>
+        </div>
+
+    </section>
+
+
+    <!-- WHATSAPP -->
+
+    <section class="section">
+
+        <h2 class="section-title">
+            Reserva tu atención
+        </h2>
+
+        <p style="
+            text-align:center;
+            color:#aaa;
+            font-size:14px;
+            line-height:1.6;
+        ">
+            Comunícate directamente con Style Kings
+            para consultar disponibilidad.
+        </p>
+
+        <a class="whatsapp-large"
+           href="https://wa.me/56982624965"
+           target="_blank">
+
+            💬 CONTACTAR POR WHATSAPP
+
+        </a>
+
+    </section>
+
+
+    <!-- PIE -->
+
+    <footer>
+
+        <span class="gold">STYLE KINGS</span><br>
+
+        Barbería · Iquique<br>
+
+        <span>
+            Tarjeta digital profesional
+        </span>
+
+    </footer>
+
+</div>
+
+</body>
+</html>
