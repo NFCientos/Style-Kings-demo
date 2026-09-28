@@ -10,19 +10,41 @@
         content="Style Kings Barbería en Iquique. Cortes modernos y clásicos, barba y coloración de barba.">
 
     <style>
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
+        :root {
+            --gold: #d4af37;
+            --gold-light: #f1d675;
+            --black: #070707;
+            --dark: #111111;
+            --card: rgba(20,20,20,0.94);
+            --line: rgba(212,175,55,0.18);
+            --text: #f5f5f5;
+            --muted: #999;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: Arial, Helvetica, sans-serif;
             background:
-                radial-gradient(circle at top, #252525 0%, #111 45%, #080808 100%);
-            color: #ffffff;
+                radial-gradient(
+                    circle at 50% -10%,
+                    #333 0%,
+                    #151515 32%,
+                    #090909 68%,
+                    #050505 100%
+                );
+            color: var(--text);
             min-height: 100vh;
-            padding: 25px 15px;
+            padding: 18px 14px 30px;
         }
 
         .container {
@@ -31,123 +53,219 @@
             margin: auto;
         }
 
-        /* ENCABEZADO */
+        /* =========================
+           HERO
+        ========================= */
 
-        .header {
+        .hero {
+            position: relative;
             text-align: center;
-            padding: 20px 10px 25px;
+            padding: 28px 12px 30px;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            background: rgba(212,175,55,0.08);
+            border-radius: 50%;
+            filter: blur(45px);
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         .logo {
-            width: 105px;
-            height: 105px;
-            margin: 0 auto 18px;
+            position: relative;
+            width: 112px;
+            height: 112px;
+            margin: 0 auto 20px;
 
-            border: 2px solid #c9a227;
+            border: 1px solid var(--gold);
             border-radius: 50%;
 
             display: flex;
             align-items: center;
             justify-content: center;
 
-            background: #111;
+            background:
+                radial-gradient(circle, #222 0%, #0b0b0b 70%);
 
             box-shadow:
-                0 0 0 5px rgba(201, 162, 39, 0.08),
-                0 10px 30px rgba(0,0,0,0.5);
+                0 0 0 7px rgba(212,175,55,0.05),
+                0 0 35px rgba(212,175,55,0.12),
+                0 18px 40px rgba(0,0,0,0.65);
+        }
+
+        .logo::after {
+            content: "";
+            position: absolute;
+            inset: 7px;
+            border: 1px solid rgba(212,175,55,0.25);
+            border-radius: 50%;
         }
 
         .logo span {
-            color: #c9a227;
-            font-size: 24px;
+            color: var(--gold-light);
+            font-size: 27px;
             font-weight: bold;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
+        }
+
+        .eyebrow {
+            position: relative;
+            color: var(--gold);
+            font-size: 11px;
+            letter-spacing: 4px;
+            font-weight: bold;
+            margin-bottom: 9px;
         }
 
         h1 {
-            font-size: 34px;
-            letter-spacing: 4px;
-            margin-bottom: 7px;
+            position: relative;
+            font-size: 36px;
+            letter-spacing: 5px;
+            line-height: 1;
+            margin-bottom: 10px;
         }
 
         .subtitle {
-            color: #c9a227;
-            font-size: 15px;
-            letter-spacing: 1px;
+            position: relative;
+            color: #ddd;
+            font-size: 13px;
+            letter-spacing: 3px;
         }
 
         .intro {
-            text-align: center;
-            color: #bdbdbd;
+            position: relative;
+            color: #999;
             font-size: 14px;
-            margin-top: 12px;
+            margin: 16px auto 0;
+            line-height: 1.6;
+            max-width: 330px;
         }
 
-        /* BOTONES PRINCIPALES */
+        /* =========================
+           BOTONES PRINCIPALES
+        ========================= */
 
         .main-buttons {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-            margin: 10px 0 25px;
+            gap: 9px;
+            margin: 4px 0 22px;
         }
 
         .main-button {
+            position: relative;
             text-decoration: none;
             color: white;
-            background: #181818;
-            border: 1px solid #333;
-            border-radius: 14px;
-            padding: 16px 6px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #1c1c1c,
+                    #101010
+                );
+
+            border: 1px solid #303030;
+            border-radius: 15px;
+
+            padding: 16px 5px 14px;
             text-align: center;
 
-            transition: 0.2s;
+            box-shadow:
+                0 8px 20px rgba(0,0,0,0.25);
+
+            transition:
+                transform 0.2s ease,
+                border-color 0.2s ease,
+                box-shadow 0.2s ease;
         }
 
         .main-button:hover {
-            transform: translateY(-2px);
-            border-color: #c9a227;
+            transform: translateY(-3px);
+            border-color: var(--gold);
+            box-shadow:
+                0 12px 25px rgba(0,0,0,0.4),
+                0 0 15px rgba(212,175,55,0.08);
         }
 
         .main-button .icon {
             display: block;
-            font-size: 24px;
+            font-size: 23px;
             margin-bottom: 7px;
         }
 
         .main-button span:last-child {
-            font-size: 12px;
+            font-size: 11px;
+            letter-spacing: 0.5px;
         }
 
-        /* SECCIONES */
+        /* =========================
+           SECCIONES
+        ========================= */
 
         .section {
-            background: rgba(20,20,20,0.94);
-            border: 1px solid #292929;
-            border-radius: 18px;
-            padding: 20px;
-            margin-bottom: 16px;
+            position: relative;
 
-            box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(28,28,28,0.97),
+                    rgba(13,13,13,0.97)
+                );
+
+            border: 1px solid #292929;
+            border-radius: 20px;
+
+            padding: 22px 20px;
+            margin-bottom: 15px;
+
+            box-shadow:
+                0 14px 35px rgba(0,0,0,0.25);
+
+            overflow: hidden;
+        }
+
+        .section::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 1px;
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    rgba(212,175,55,0.4),
+                    transparent
+                );
         }
 
         .section-title {
-            color: #c9a227;
-            font-size: 17px;
+            color: var(--gold);
+            font-size: 14px;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 16px;
+            letter-spacing: 3px;
+            margin-bottom: 18px;
             text-align: center;
         }
 
-        /* SERVICIOS */
+        /* =========================
+           SERVICIOS
+        ========================= */
 
         .service {
             display: flex;
             align-items: center;
-            gap: 13px;
+            gap: 14px;
 
-            padding: 13px 5px;
+            padding: 14px 4px;
+
             border-bottom: 1px solid #292929;
         }
 
@@ -156,44 +274,73 @@
         }
 
         .service-icon {
-            font-size: 23px;
-            width: 35px;
-            text-align: center;
+            width: 38px;
+            height: 38px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #171717;
+            border: 1px solid #303030;
+            border-radius: 10px;
+
+            font-size: 19px;
         }
 
         .service-name {
-            font-size: 15px;
-            color: #eeeeee;
+            font-size: 14px;
+            color: #eee;
+            line-height: 1.4;
         }
 
-        /* INFORMACIÓN */
+        /* =========================
+           INFORMACIÓN
+        ========================= */
 
         .info-row {
             display: flex;
             align-items: flex-start;
-            gap: 12px;
-            padding: 9px 0;
-            color: #dddddd;
+            gap: 13px;
+
+            padding: 11px 0;
+
+            color: #ccc;
             font-size: 14px;
             line-height: 1.5;
         }
 
         .info-icon {
-            width: 25px;
-            text-align: center;
-            font-size: 18px;
+            width: 32px;
+            height: 32px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #171717;
+            border: 1px solid #303030;
+            border-radius: 9px;
+
+            font-size: 16px;
+            flex-shrink: 0;
         }
 
         .info-row strong {
             color: white;
         }
 
-        /* HORARIOS */
+        /* =========================
+           HORARIOS
+        ========================= */
 
         .hours {
             display: flex;
             justify-content: space-between;
-            padding: 8px 0;
+            align-items: center;
+
+            padding: 9px 0;
+
             border-bottom: 1px solid #292929;
             font-size: 14px;
         }
@@ -207,55 +354,100 @@
         }
 
         .time {
-            color: #c9a227;
+            color: var(--gold-light);
             font-weight: bold;
+            font-size: 13px;
         }
 
-        /* BOTÓN WHATSAPP */
+        /* =========================
+           CTA
+        ========================= */
+
+        .cta-text {
+            text-align: center;
+            color: #999;
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
 
         .whatsapp-large {
             display: block;
             text-align: center;
             text-decoration: none;
 
-            background: #c9a227;
-            color: #080808;
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--gold-light),
+                    var(--gold)
+                );
+
+            color: #090909;
 
             font-weight: bold;
-            font-size: 15px;
+            font-size: 14px;
+            letter-spacing: 0.5px;
 
-            padding: 15px;
-            border-radius: 12px;
+            padding: 16px;
+            border-radius: 13px;
 
-            margin-top: 15px;
+            box-shadow:
+                0 8px 25px rgba(212,175,55,0.15);
 
-            transition: 0.2s;
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
         }
 
         .whatsapp-large:hover {
-            transform: scale(1.02);
+            transform: translateY(-2px);
+            box-shadow:
+                0 12px 30px rgba(212,175,55,0.25);
         }
 
-        /* PIE */
+        /* =========================
+           DEMO
+        ========================= */
+
+        .demo-note {
+            text-align: center;
+            color: #555;
+            font-size: 10px;
+            margin: 10px 0 16px;
+            letter-spacing: 0.5px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
             text-align: center;
-            color: #666;
+            color: #555;
             font-size: 11px;
-            padding: 15px 0 5px;
-            line-height: 1.6;
+            padding: 8px 0 5px;
+            line-height: 1.7;
         }
 
         .gold {
-            color: #c9a227;
+            color: var(--gold);
         }
 
-        /* RESPONSIVE */
+        /* =========================
+           RESPONSIVE
+        ========================= */
 
         @media (max-width: 360px) {
 
+            body {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+
             h1 {
-                font-size: 28px;
+                font-size: 29px;
+                letter-spacing: 4px;
             }
 
             .main-buttons {
@@ -269,6 +461,10 @@
             .main-button .icon {
                 font-size: 21px;
             }
+
+            .section {
+                padding: 19px 16px;
+            }
         }
 
     </style>
@@ -278,12 +474,18 @@
 
 <div class="container">
 
-    <!-- ENCABEZADO -->
+    <!-- =========================
+         HERO
+    ========================= -->
 
-    <header class="header">
+    <header class="hero">
 
         <div class="logo">
             <span>SK</span>
+        </div>
+
+        <div class="eyebrow">
+            BARBER SHOP
         </div>
 
         <h1>STYLE KINGS</h1>
@@ -299,36 +501,46 @@
     </header>
 
 
-    <!-- BOTONES PRINCIPALES -->
+    <!-- =========================
+         ACCIONES
+    ========================= -->
 
     <div class="main-buttons">
 
-        <!-- LLAMAR -->
-        <a class="main-button" href="tel:+56982624965">
+        <a class="main-button"
+           href="tel:+56982624965">
+
             <span class="icon">📞</span>
             <span>Llamar</span>
+
         </a>
 
-        <!-- WHATSAPP -->
+
         <a class="main-button"
            href="https://wa.me/56982624965"
            target="_blank">
+
             <span class="icon">💬</span>
             <span>WhatsApp</span>
+
         </a>
 
-        <!-- GOOGLE MAPS -->
+
         <a class="main-button"
            href="https://www.google.com/maps/search/?api=1&query=Barros+Arana+773+Iquique+Chile"
            target="_blank">
+
             <span class="icon">📍</span>
             <span>Cómo llegar</span>
+
         </a>
 
     </div>
 
 
-    <!-- SERVICIOS -->
+    <!-- =========================
+         SERVICIOS
+    ========================= -->
 
     <section class="section">
 
@@ -337,62 +549,87 @@
         </h2>
 
         <div class="service">
+
             <div class="service-icon">✂️</div>
+
             <div class="service-name">
                 Corte de cabello moderno
             </div>
+
         </div>
 
+
         <div class="service">
+
             <div class="service-icon">✂️</div>
+
             <div class="service-name">
                 Corte de cabello clásico
             </div>
+
         </div>
 
+
         <div class="service">
+
             <div class="service-icon">🪒</div>
+
             <div class="service-name">
                 Corte de barba
             </div>
+
         </div>
 
+
         <div class="service">
+
             <div class="service-icon">🎨</div>
+
             <div class="service-name">
                 Coloración de barba
             </div>
+
         </div>
 
     </section>
 
 
-    <!-- INFORMACIÓN -->
+    <!-- =========================
+         INFORMACIÓN
+    ========================= -->
 
     <section class="section">
 
         <h2 class="section-title">
-            Información
+            Encuéntranos
         </h2>
+
 
         <div class="info-row">
 
             <div class="info-icon">📍</div>
 
             <div>
+
                 <strong>Dirección</strong><br>
+
                 Barros Arana 773, Iquique
+
             </div>
 
         </div>
+
 
         <div class="info-row">
 
             <div class="info-icon">📞</div>
 
             <div>
+
                 <strong>Teléfono</strong><br>
+
                 +56 9 8262 4965
+
             </div>
 
         </div>
@@ -400,13 +637,16 @@
     </section>
 
 
-    <!-- HORARIOS -->
+    <!-- =========================
+         HORARIOS
+    ========================= -->
 
     <section class="section">
 
         <h2 class="section-title">
             Horarios
         </h2>
+
 
         <div class="hours">
             <span class="day">Lunes</span>
@@ -446,23 +686,21 @@
     </section>
 
 
-    <!-- WHATSAPP -->
+    <!-- =========================
+         CTA FINAL
+    ========================= -->
 
     <section class="section">
 
         <h2 class="section-title">
-            Reserva tu atención
+            ¿Necesitas atención?
         </h2>
 
-        <p style="
-            text-align:center;
-            color:#aaa;
-            font-size:14px;
-            line-height:1.6;
-        ">
+        <p class="cta-text">
             Comunícate directamente con Style Kings
             para consultar disponibilidad.
         </p>
+
 
         <a class="whatsapp-large"
            href="https://wa.me/56982624965"
@@ -475,17 +713,30 @@
     </section>
 
 
-    <!-- PIE -->
+    <!-- IDENTIFICACIÓN DEL PROTOTIPO -->
+
+    <div class="demo-note">
+        Prototipo demostrativo creado para Style Kings
+    </div>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
 
     <footer>
 
-        <span class="gold">STYLE KINGS</span><br>
-
-        Barbería · Iquique<br>
-
-        <span>
-            Tarjeta digital profesional
+        <span class="gold">
+            STYLE KINGS
         </span>
+
+        <br>
+
+        Barbería · Iquique
+
+        <br>
+
+        Tarjeta digital profesional
 
     </footer>
 
